@@ -1,6 +1,17 @@
 public class Test_Case {
-    public static void main(String[] args)
-    {
-        System.out.println("Hello World!");
-    }
+
+        private String testWord;
+
+        public Test_Case ()
+        {
+            setTestWord("Hello World!");
+        }
+        public void setTestWord(String word)
+        {
+            this.testWord = word;
+        }
+        public String getTestWord()
+        {
+            return this.testWord;
+        }
 }
