@@ -4,7 +4,7 @@
  * @author Liam Hilton-Green
  * @version 1.0
  * 
- * CEN3031    Project #: 5
+ * CEN3031    Project
  * File Name: Suit.java
  */
 
