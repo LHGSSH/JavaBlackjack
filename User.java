@@ -17,9 +17,7 @@ import java.io.IOException;
 
 public class User{
 
-    private String username;
     private String fileName = "userData.txt";
-    private String password;
     private int score;
 
     /* 
