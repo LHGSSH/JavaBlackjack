@@ -10,7 +10,7 @@
 
 public class Card {
 	/**
-	 * The suit of the card (hearts, spades, etc.).
+	 * The suit of the card (hearts, spades, etc.)
 	 */
 	private String suit;
 }
