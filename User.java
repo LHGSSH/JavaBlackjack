@@ -103,10 +103,12 @@ public class User{
 
     public boolean resetScore(String username, String password){
 
+        return true;
     }
 
     public int retreiveScore(String username, String password){
         
+        return 0;
     }
 
     //Encrypts by casting to an int, adding to ascii value, and casting back to char
