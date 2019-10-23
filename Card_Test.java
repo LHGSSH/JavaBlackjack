@@ -34,9 +34,9 @@ class Card_Test
     void getRank()
     {
         assertEquals(8, newCard.getRank());
-        assertEquals(4, newCard.getRank());
-        assertEquals(11, newCard.getRank());
-        assertEquals(1, newCard.getRank());
+        assertEquals(4, newCard2.getRank());
+        assertEquals(11, faceCard.getRank());
+        assertEquals(1, aceCard.getRank());
     }
     @Test
     void setRank()
