@@ -46,7 +46,7 @@ public class User{
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             for (String next = reader.readLine(); next != null; next = reader.readLine()){
                 if (next.equals(userName)){
-                    if (decrypt(reader.readLine()) == password){
+                    if (decrypt(reader.readLine()).equals(password)){       /* Changed to .equals() from == */
                         return true;
                     }
                 }
