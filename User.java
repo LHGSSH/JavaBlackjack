@@ -1,10 +1,8 @@
 /*
 This file stores User data to a file and provides methods to encrypt the password,
 as well as to validate login and change password "securely"
-
 @author Joshua Kleine
 @version 1.0
-
 CEN 3031
 File: User.java
 */
@@ -29,7 +27,7 @@ public class User{
            // setPassword(password);
            // setUserName(Username);
             try (FileWriter fileWrite = new FileWriter(f)){
-                fileWrite.write(username + "\n" + encrypt(password) + "\n");
+                fileWrite.write(username + "\n" + encrypt(password) + "\n" + "0\n");
                 fileWrite.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -97,6 +95,18 @@ public class User{
             return true;
         }
         return false;
+    }
+
+    public void addScore(String username, String password){
+         
+    }
+
+    public boolean resetScore(String username, String password){
+
+    }
+
+    public int retreiveScore(String username, String password){
+        
     }
 
     //Encrypts by casting to an int, adding to ascii value, and casting back to char
