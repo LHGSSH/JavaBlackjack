@@ -13,33 +13,32 @@ public class Shoe
 
     public Shoe()
     {
-        this.deck01 = Deck();
-        this.deck02 = Deck();
-        this.deck03 = Deck();
-        this.deck04 = Deck();
-        this.deck05 = Deck();
-        this.deck06 = Deck();
-        this.deck07 = Deck();
-        this.deck08 = Deck();
+        this.deck01 = new Deck();
+        this.deck02 = new Deck();
+        this.deck03 = new Deck();
+        this.deck04 = new Deck();
+        this.deck05 = new Deck();
+        this.deck06 = new Deck();
+        this.deck07 = new Deck();
+        this.deck08 = new Deck();
 
         this.currentDeck = this.deck01;
 
         this.decksRemaining = 8;
     }
 
-    public isShoeEmpty()
+    public boolean isShoeEmpty()
     {
         if(decksRemaining >= 1)
-            return FALSE;
+            return false;
         else
-            return TRUE;
+            return true;
     }
 
-    public deal(Deck currentDeck)
+    public Card deal(Deck currentDeck)
     {
         // Presumed that dealCard method exists within Deck class
         return currentDeck.dealCard();
     }
-
 
 }
