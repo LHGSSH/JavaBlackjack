@@ -41,5 +41,4 @@ public class Shoe
         return currentDeck.dealCard();
     }
 
-
 }
