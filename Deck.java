@@ -41,7 +41,8 @@ public class Deck {
     */
     public Card dealCard(){
         ListIterator<Card> cardIterator = deckOfCards.listIterator();
-        Card c = cardIterator.next();
+        Card c = newCard();
+        c = cardIterator.next();
         cardIterator.remove();
         return c;
     }
