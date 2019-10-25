@@ -21,7 +21,7 @@ public class Deck {
     //code to hold even for changes in the size of a deck or types of suits.
     public Deck(){
       for (Suit suit : Suit.values()){
-            for (int i = 1; i <= (deckOfCards.size() / Suit.values().length); i++){
+            for (int 1 = 0; i <= (deckOfCards.size() / Suit.values().length); i++){
                 Card card = new Card(suit, i);
                 deckOfCards.add(card);
             }
@@ -41,9 +41,7 @@ public class Deck {
     */
     public Card dealCard(){
         ListIterator<Card> cardIterator = deckOfCards.listIterator();
-        Card c = newCard();
-        c = cardIterator.next();
-        cardIterator.remove();
-        return c;
+       
+        return cardIterator.next();
     }
 }
