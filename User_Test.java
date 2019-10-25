@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class User_Test
 {
-    User newUser = new User("testName", "testPassword");
+    private User newUser = new User("testName", "testPassword");
 
     @Test
     void loginCheck()

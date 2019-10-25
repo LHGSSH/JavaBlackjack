@@ -4,10 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Card_Test
 {
-    Card newCard = new Card(Suit.HEARTS, 8);
-    Card newCard2 = new Card(Suit.DIAMONDS, 4);
-    Card faceCard = new Card(Suit.CLUBS, 11);
-    Card aceCard = new Card(Suit.SPADES, 1);
+    private Card newCard = new Card(Suit.HEARTS, 8);
+    private Card newCard2 = new Card(Suit.DIAMONDS, 4);
+    private Card faceCard = new Card(Suit.CLUBS, 11);
+    private Card aceCard = new Card(Suit.SPADES, 1);
 
     @Test
     void getSuit()
