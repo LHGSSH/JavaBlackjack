@@ -21,7 +21,7 @@ public class Deck {
     //code to hold even for changes in the size of a deck or types of suits.
     public Deck(){
       for (Suit suit : Suit.values()){
-            for (int 1 = 0; i <= (deckOfCards.size() / Suit.values().length); i++){
+            for (int i = 0; i <= (deckOfCards.size() / Suit.values().length); i++){
                 Card card = new Card(suit, i);
                 deckOfCards.add(card);
             }

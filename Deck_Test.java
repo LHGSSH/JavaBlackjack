@@ -9,7 +9,11 @@ class Deck_Test
     @Test
     void Shuffle()
     {
+        Card testCard1 = testDeck.dealCard();
         testDeck.Shuffle();
+        Card testCard2 = testDeck.dealCard();
+
+        assertNotEquals(testCard1, testCard2);
     }
     @Test
     void dealCard()
