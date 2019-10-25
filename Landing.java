@@ -58,13 +58,14 @@ public class Landing {
 			public void mouseClicked(MouseEvent e) 
 			{
 				JFrame popup = new JFrame();
-				popup.setBounds(50, 50, 50, 50);
+				popup.setBounds(50, 50, 100, 100);
 				popup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				popup.getContentPane().setLayout(new BorderLayout(0, 0));
 				
 				JTextArea txtrCommence = new JTextArea();
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
 				popup.getContentPane().add(txtrCommence, BorderLayout.CENTER);
+				popup.setVisible(true);
 			}
 		});
 		btnLetsPlay.addActionListener(new ActionListener() {
