@@ -27,15 +27,15 @@ public class Shoe
         this.decksRemaining = 8;
     }
 
-    public isShoeEmpty()
+    public boolean isShoeEmpty()
     {
         if(decksRemaining >= 1)
-            return FALSE;
+            return false;
         else
-            return TRUE;
+            return true;
     }
 
-    public deal(Deck currentDeck)
+    public Card deal(Deck currentDeck)
     {
         // Presumed that dealCard method exists within Deck class
         return currentDeck.dealCard();
