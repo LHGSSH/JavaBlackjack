@@ -13,14 +13,14 @@ public class Shoe
 
     public Shoe()
     {
-        this.deck01 = Deck();
-        this.deck02 = Deck();
-        this.deck03 = Deck();
-        this.deck04 = Deck();
-        this.deck05 = Deck();
-        this.deck06 = Deck();
-        this.deck07 = Deck();
-        this.deck08 = Deck();
+        this.deck01 = new Deck();
+        this.deck02 = new Deck();
+        this.deck03 = new Deck();
+        this.deck04 = new Deck();
+        this.deck05 = new Deck();
+        this.deck06 = new Deck();
+        this.deck07 = new Deck();
+        this.deck08 = new Deck();
 
         this.currentDeck = this.deck01;
 
