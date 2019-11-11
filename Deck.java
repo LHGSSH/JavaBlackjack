@@ -36,12 +36,19 @@ public class Deck {
     /*
     This method Returns the next card object from the deck arraylist, and deletes
     that element.
-    TODO manage what happens when the iterator tries to go beyond the deck size.
     (either in this class or in the manager class)
     */
     public Card dealCard(){
         ListIterator<Card> cardIterator = deckOfCards.listIterator();
-       
-        return cardIterator.next();
+        Card returnedCard;
+
+        if (cardIterator.hasNext()) {
+            returnedCard = cardIterator.next();
+            cardIterator.remove();
+            return returnedCard;
+        }
+        else {
+            return null;
+        }
     }
 }
