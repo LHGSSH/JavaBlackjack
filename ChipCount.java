@@ -4,7 +4,7 @@ as well as to validate login and change password "securely"
 @author Joshua Kleine
 @version 1.0
 CEN 3031
-File: User.java
+File: ChipCount.java
 */
 public class ChipCount {
     private int numChips;
