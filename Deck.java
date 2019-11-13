@@ -23,7 +23,7 @@ public class Deck {
     public Deck(){
         System.out.println("Deck Size Before: " + getDeckSize());
       for (Suit suit : Suit.values()){
-            for (int i = 0; i <= (deckOfCards.size() / Suit.values().length); i++){
+            for (int i = 1; i <= 13; i++){
                 Card card = new Card(suit, i);
                 deckOfCards.add(card);
             }
