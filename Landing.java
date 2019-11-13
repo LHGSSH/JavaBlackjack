@@ -76,13 +76,14 @@ public class Landing {
 				
 				JTextArea txtrCommence = new JTextArea();
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
+				txtrCommence.setPreferredSize(new Dimension(10,50));
 
 				JPanel backgroundPanel = new JPanel();
 				backgroundPanel.setOpaque(false);
 				backgroundPanel.setLayout(new BorderLayout());
 
 				JLabel backgroundImage = new JLabel();
-				backgroundImage.setIcon(new ImageIcon("Card Images//Green_Background.png"));
+				backgroundImage.setIcon(new ImageIcon("Card Images/Green_Background.png"));
 				backgroundImage.setLayout(new BorderLayout());
 
 				/*TODO:: Call the Game_Manager class here.
@@ -92,7 +93,7 @@ public class Landing {
 
 				BufferedImage userCardImage = null;
 				try {
-					userCardImage = ImageIO.read(new File("Card Images//2C.png"));
+					userCardImage = ImageIO.read(new File("Card Images/2C.png"));
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
