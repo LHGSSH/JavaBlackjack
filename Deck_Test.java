@@ -12,16 +12,16 @@ class Deck_Test
         System.out.println("Deck Size: " + testDeck.getDeckSize());
 
         Card testCard1 = testDeck.dealCard();
-        //testDeck.Shuffle();
+        testDeck.Shuffle();
         System.out.println("Deck Size: " + testDeck.getDeckSize());
         Card testCard2 = testDeck.dealCard();
-        //testDeck.Shuffle();
+        testDeck.Shuffle();
         System.out.println("Deck Size: " + testDeck.getDeckSize());
         Card testCard3 = testDeck.dealCard();
-        //testDeck.Shuffle();
+        testDeck.Shuffle();
         System.out.println("Deck Size: " + testDeck.getDeckSize());
         Card testCard4 = testDeck.dealCard();
-        //testDeck.Shuffle();
+        testDeck.Shuffle();
         System.out.println("Deck Size: " + testDeck.getDeckSize());
         Card testCard5 = testDeck.dealCard();
 
