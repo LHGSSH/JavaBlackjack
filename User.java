@@ -106,7 +106,7 @@ public class User{
         return true;
     }
 
-    public int retreiveScore(String username, String password){
+    public int retrieveScore(String username, String password){
         
         return 0;
     }
