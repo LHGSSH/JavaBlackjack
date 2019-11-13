@@ -34,8 +34,8 @@ public class Deck {
         Collections.shuffle(deckOfCards);
     }
     /*
-    This method Returns the next card object from the deck arraylist, and deletes
-    that element.
+    If there is another card in the deck, this method returns it.
+    Else, it returns null.
     (either in this class or in the manager class)
     */
     public Card dealCard(){
