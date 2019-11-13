@@ -1,14 +1,8 @@
-import java.awt.EventQueue;
+import java.awt.*;
 
-import javax.swing.JFrame;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.SwingConstants;
-import javax.swing.JButton;
+import javax.swing.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JRadioButton;
-import javax.swing.JTextArea;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -79,6 +73,20 @@ public class Landing {
 				JTextArea txtrCommence = new JTextArea();
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
 				popup.getContentPane().add(txtrCommence, BorderLayout.CENTER);
+
+				JPanel testBackground = new JPanel();
+				testBackground.setOpaque(false);
+				testBackground.setLayout(new FlowLayout());
+
+				JLabel testImage = new JLabel();
+				testImage.setLayout(new FlowLayout());
+				testImage.setIcon(new ImageIcon("Green_Background.png"));
+				testImage.setLayout(new BorderLayout());
+
+				testBackground.add(txtrCommence);
+
+				testImage.add(testBackground);
+				popup.add(testImage);
 				
 				popup.setVisible(true);
 				

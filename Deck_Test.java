@@ -10,16 +10,16 @@ class Deck_Test
     void Shuffle()
     {
         Card testCard1 = testDeck.dealCard();
-        testDeck.Shuffle();
+        //testDeck.Shuffle();
         Card testCard2 = testDeck.dealCard();
-        testDeck.Shuffle();
+        //testDeck.Shuffle();
         Card testCard3 = testDeck.dealCard();
-        testDeck.Shuffle();
+        //testDeck.Shuffle();
         Card testCard4 = testDeck.dealCard();
-        testDeck.Shuffle();
+        //testDeck.Shuffle();
         Card testCard5 = testDeck.dealCard();
 
-        /*
+
         System.out.println(testCard1.getRank());
         System.out.println(testCard2.getRank());
         System.out.println(testCard3.getRank());
@@ -35,7 +35,7 @@ class Deck_Test
         System.out.println(testCard3.getValue());
         System.out.println(testCard4.getValue());
         System.out.println(testCard5.getValue());
-         */
+
 
         assertNotEquals(testCard1.getRank(), testCard3.getRank());
     }
