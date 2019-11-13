@@ -15,6 +15,7 @@ import java.util.ListIterator;
 public class Deck {
 
     private int nextCard;
+    private int deckSize;
     private ArrayList<Card> deckOfCards = new ArrayList<Card>(52);
 
     //Two loops to create all 52 cards. The inner loop is complicated, but allows for this
@@ -50,5 +51,10 @@ public class Deck {
         else {
             return null;
         }
+    }
+
+    public int getDeckSize()
+    {
+        return this.deckOfCards.size();
     }
 }

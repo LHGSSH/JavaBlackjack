@@ -85,6 +85,11 @@ public class Landing {
 				backgroundImage.setIcon(new ImageIcon("Card Images//Green_Background.png"));
 				backgroundImage.setLayout(new BorderLayout());
 
+				/*TODO:: Call the Game_Manager class here.
+				   Get card images from a Deck that gets made in Game_Manager.
+				   Add a 'Bet' and 'Hit' and 'Stand' buttons
+				 */
+
 				BufferedImage userCardImage = null;
 				try {
 					userCardImage = ImageIO.read(new File("Card Images//2C.png"));
