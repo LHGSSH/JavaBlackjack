@@ -1,3 +1,8 @@
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
 /**
  * This class represents a playing card.
  * 
@@ -29,6 +34,13 @@ public class Card {
 	 * Face cards (jack, queen, or king) are 10 points.
 	 */
 	private int value;
+
+	/**
+	 * The image of the card to be used in the game.
+	 * Image files are named in the following format: "(RANK)(FIRST LETTER OF SUIT).png."
+	 * Example: 5 of Hearts is 5H.png.
+	 */
+	private BufferedImage cardImage;
 	
 	/**
 	 * The constructor for Card.
@@ -38,6 +50,7 @@ public class Card {
 	public Card(Suit suit, int rank) {
 		setSuit(suit);
 		setRank(rank);
+		setCardImage(suit, rank);
 		
 		if (rank >= 1 && rank <= 10) { //Ace or numbered card
 			setValue(rank);
@@ -96,6 +109,31 @@ public class Card {
 	 */
 	public void setValue(int newValue) {
 		this.value = newValue;
+	}
+
+	/**
+	 * Returns the image for the card.
+	 * @return cardImage; the image of the card
+	 */
+	public BufferedImage getCardImage() {
+		return cardImage;
+	}
+
+	/**
+	 * Uses the suit and rank to get the corresponding card image
+	 * from the Card Images folder and associate it with the card.
+	 * @param suit: the suit of the card
+	 * @param rank: the rank of the card
+	 */
+	public void setCardImage(Suit suit, int rank) {
+		Character firstCharacterOfSuit = getSuit().toString().charAt(0);
+		cardImage = null;
+
+		try {
+			cardImage = ImageIO.read(new File("/Card Images/" + getRank() + firstCharacterOfSuit + ".png") );
+		} catch (IOException e) {
+			System.out.println("Card image reading error.");
+		}
 	}
 	
 	/**
