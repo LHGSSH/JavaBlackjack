@@ -132,7 +132,7 @@ public class Card {
 		this.cardImage = null;
 
 		try {
-			this.cardImage = ImageIO.read(new File("/Card Images/" + rankString + firstCharacterOfSuit + ".png") );
+			this.cardImage = ImageIO.read(new File("CardImages/" + rankString + Character.toString(firstCharacterOfSuit) + ".png") );
 		} catch (IOException e) {
 			System.out.println("Card image reading error.");
 		}
