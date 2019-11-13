@@ -127,10 +127,12 @@ public class Card {
 	 */
 	public void setCardImage(Suit suit, int rank) {
 		Character firstCharacterOfSuit = getSuit().toString().charAt(0);
-		cardImage = null;
+		String rankString = Integer.toString( getRank() );
+		System.out.println("First char of suit: " + firstCharacterOfSuit);
+		this.cardImage = null;
 
 		try {
-			cardImage = ImageIO.read(new File("/Card Images/" + getRank() + firstCharacterOfSuit + ".png") );
+			this.cardImage = ImageIO.read(new File("/Card Images/" + rankString + firstCharacterOfSuit + ".png") );
 		} catch (IOException e) {
 			System.out.println("Card image reading error.");
 		}
