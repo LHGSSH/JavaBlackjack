@@ -77,7 +77,6 @@ public class Landing {
 
 				JTextArea txtrCommence = new JTextArea();
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
-				txtrCommence.setPreferredSize(new Dimension(10,50));
 
 				JPanel backgroundPanel = new JPanel();
 				backgroundPanel.setOpaque(false);
@@ -96,7 +95,7 @@ public class Landing {
 
 				/*TODO:: Call the Game_Manager class here.
 				   Get card images from a Deck that gets made in Game_Manager.
-				   Add a 'Bet' and 'Hit' and 'Stand' buttons
+				   Add 'Bet' and 'Hit' and 'Stand' buttons
 				 */
 
 				BufferedImage user1CardBufferedImage = null;
@@ -105,6 +104,7 @@ public class Landing {
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
+
 				Image user1CardImage = user1CardBufferedImage.getScaledInstance(100,150,100);
 				ImageIcon user1CardIcon = new ImageIcon(user1CardImage);
 				JLabel user1CardDelt = new JLabel(user1CardIcon);
@@ -115,15 +115,27 @@ public class Landing {
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
+
 				Image dealerCardImage = dealerCardBufferedImage.getScaledInstance(100,150,100);
 				ImageIcon dealerCardIcon = new ImageIcon(dealerCardImage);
 				JLabel dealerCardDelt = new JLabel(dealerCardIcon);
 
+				JPanel northPanel = new JPanel();
+				northPanel.setOpaque(false);
+				northPanel.setLayout(new FlowLayout());
+				northPanel.add(txtrCommence);
+
 				JPanel centerPanel = new JPanel();
 				centerPanel.setOpaque(false);
-				centerPanel.setLayout(new BorderLayout());
-				centerPanel.add(user1CardDelt, BorderLayout.SOUTH);
-				centerPanel.add(dealerCardDelt, BorderLayout.NORTH);
+				centerPanel.setLayout(new GridBagLayout());
+				GridBagConstraints c = new GridBagConstraints();
+
+				c.gridx = 2;
+				c.gridy = 1;
+				centerPanel.add(user1CardDelt, c);
+				c.gridx = 1;
+				c.gridy = 0;
+				centerPanel.add(dealerCardDelt, c);
 
 				JPanel eastPanel = new JPanel();
 				eastPanel.setOpaque(false);
@@ -137,7 +149,7 @@ public class Landing {
 				westPanel.add(stayButton);
 
 				backgroundPanel.add(centerPanel, BorderLayout.CENTER);
-				backgroundPanel.add(txtrCommence, BorderLayout.NORTH);
+				backgroundPanel.add(northPanel, BorderLayout.NORTH);
 				backgroundPanel.add(eastPanel, BorderLayout.EAST);
 				backgroundPanel.add(westPanel, BorderLayout.WEST);
 
