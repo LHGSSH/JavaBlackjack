@@ -68,13 +68,13 @@ public class Landing {
 		});
 
 		btnLetsPlay.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
+			public void actionPerformed(ActionEvent e)
 			{
 				JFrame popup = new JFrame();
 				popup.setBounds(100, 100, 950, 750);
 				popup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				popup.getContentPane().setLayout(new BorderLayout(0, 0));
-				
+
 				JTextArea txtrCommence = new JTextArea();
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
 				txtrCommence.setPreferredSize(new Dimension(10,50));
@@ -88,32 +88,65 @@ public class Landing {
 				backgroundImage.setLayout(new BorderLayout());
 
 				JButton betButton = new JButton();
+				betButton.setText("BET");
 				JButton hitButton = new JButton();
-				JButton standButton = new JButton();
+				hitButton.setText("HIT");
+				JButton stayButton = new JButton();
+				stayButton.setText("STAY");
 
 				/*TODO:: Call the Game_Manager class here.
 				   Get card images from a Deck that gets made in Game_Manager.
 				   Add a 'Bet' and 'Hit' and 'Stand' buttons
 				 */
 
-				BufferedImage userCardImage = null;
+				BufferedImage user1CardBufferedImage = null;
 				try {
-					userCardImage = ImageIO.read(new File("CardImages/2C.png"));
+					user1CardBufferedImage = ImageIO.read(new File("CardImages/2C.png"));
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
-				Image testCard = userCardImage.getScaledInstance(100,150,100);
-				ImageIcon userCardIcon = new ImageIcon(testCard);
-				JLabel testLabel = new JLabel(userCardIcon);
+				Image user1CardImage = user1CardBufferedImage.getScaledInstance(100,150,100);
+				ImageIcon user1CardIcon = new ImageIcon(user1CardImage);
+				JLabel user1CardDelt = new JLabel(user1CardIcon);
 
+				BufferedImage dealerCardBufferedImage = null;
+				try {
+					dealerCardBufferedImage = ImageIO.read(new File("CardImages/red_back.png"));
+				} catch (IOException ex) {
+					ex.printStackTrace();
+				}
+				Image dealerCardImage = dealerCardBufferedImage.getScaledInstance(100,150,100);
+				ImageIcon dealerCardIcon = new ImageIcon(dealerCardImage);
+				JLabel dealerCardDelt = new JLabel(dealerCardIcon);
+
+				JPanel centerPanel = new JPanel();
+				centerPanel.setOpaque(false);
+				centerPanel.setLayout(new BorderLayout());
+				centerPanel.add(user1CardDelt, BorderLayout.SOUTH);
+				centerPanel.add(dealerCardDelt, BorderLayout.NORTH);
+
+				JPanel eastPanel = new JPanel();
+				eastPanel.setOpaque(false);
+				eastPanel.setLayout(new BorderLayout());
+
+				JPanel westPanel = new JPanel();
+				westPanel.setOpaque(false);
+				westPanel.setLayout(new GridLayout(5,0));
+				westPanel.add(hitButton);
+				westPanel.add(betButton);
+				westPanel.add(stayButton);
+
+				backgroundPanel.add(centerPanel, BorderLayout.CENTER);
 				backgroundPanel.add(txtrCommence, BorderLayout.NORTH);
-				backgroundPanel.add(testLabel, BorderLayout.SOUTH);
+				backgroundPanel.add(eastPanel, BorderLayout.EAST);
+				backgroundPanel.add(westPanel, BorderLayout.WEST);
 
 				backgroundImage.add(backgroundPanel);
+
 				popup.add(backgroundImage);
-				
+
 				popup.setVisible(true);
-				
+
 			}
 		});
 		mainFrame.getContentPane().add(btnLetsPlay, BorderLayout.SOUTH);
