@@ -59,10 +59,11 @@ public class Landing {
 				popup.setBounds(50, 50, 100, 100);
 				popup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 				popup.getContentPane().setLayout(new BorderLayout(0, 0));
-				
+
 				JTextArea txtrCommence = new JTextArea();
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
 				popup.getContentPane().add(txtrCommence, BorderLayout.CENTER);
+
 			}
 		});
 
@@ -83,8 +84,12 @@ public class Landing {
 				backgroundPanel.setLayout(new BorderLayout());
 
 				JLabel backgroundImage = new JLabel();
-				backgroundImage.setIcon(new ImageIcon("Card Images/Green_Background.png"));
+				backgroundImage.setIcon(new ImageIcon("CardImages/Green_Background.png"));
 				backgroundImage.setLayout(new BorderLayout());
+
+				JButton betButton = new JButton();
+				JButton hitButton = new JButton();
+				JButton standButton = new JButton();
 
 				/*TODO:: Call the Game_Manager class here.
 				   Get card images from a Deck that gets made in Game_Manager.
@@ -93,7 +98,7 @@ public class Landing {
 
 				BufferedImage userCardImage = null;
 				try {
-					userCardImage = ImageIO.read(new File("Card Images/2C.png"));
+					userCardImage = ImageIO.read(new File("CardImages/2C.png"));
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
@@ -112,7 +117,6 @@ public class Landing {
 			}
 		});
 		mainFrame.getContentPane().add(btnLetsPlay, BorderLayout.SOUTH);
-		
 		
 	}
 

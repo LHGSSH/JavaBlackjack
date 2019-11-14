@@ -77,4 +77,9 @@ class Card_Test
         assertFalse(faceCard.isAce());
         assertTrue(aceCard.isAce());
     }
+    @Test
+    void setCardImage()
+    {
+       assertNotEquals(newCard.getCardImage(), null);
+    }
 }
