@@ -128,7 +128,7 @@ public class Card {
 	public void setCardImage(Suit suit, int rank) {
 		Character firstCharacterOfSuit = getSuit().toString().charAt(0);
 		String rankString = Integer.toString( getRank() );
-		System.out.println("First char of suit: " + firstCharacterOfSuit);
+		//System.out.println("First char of suit: " + firstCharacterOfSuit);
 		this.cardImage = null;
 
 		try {

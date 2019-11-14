@@ -21,14 +21,12 @@ public class Deck {
     //Two loops to create all 52 cards. The inner loop is complicated, but allows for this
     //code to hold even for changes in the size of a deck or types of suits.
     public Deck(){
-        System.out.println("Deck Size Before: " + getDeckSize());
       for (Suit suit : Suit.values()){
             for (int i = 1; i <= 13; i++){
                 Card card = new Card(suit, i);
                 deckOfCards.add(card);
             }
       }
-        System.out.println("Deck Size After: " + getDeckSize());
     }
     /*
      This method mixes the ArrayList of Cards. It was modified to not return the deck.
