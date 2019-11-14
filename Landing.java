@@ -99,30 +99,41 @@ public class Landing {
 				 */
 
 				BufferedImage user1CardBackBufferedImage = null;
-				BufferedImage dealerCardBufferedImage = null;
+				BufferedImage dealerCardBackBufferedImage = null;
 				Card user1Card1 = new Card(Suit.HEARTS, 8);
 				Card user1Card2 = new Card(Suit.CLUBS, 5);
+				Card dealerCard1 = new Card(Suit.DIAMONDS, 11);
+				Card dealerCard2 = new Card(Suit.SPADES, 1);
 
 				JPanel northPanel = new JPanel();
 				JPanel centerSouthPanel = new JPanel();
+				JPanel centerNorthPanel = new JPanel();
 				JPanel centerPanel = new JPanel();
 				JPanel eastPanel = new JPanel();
 				JPanel westPanel = new JPanel();
 
 				try {
 					user1CardBackBufferedImage = ImageIO.read(new File("CardImages/blue_back.png"));
-					dealerCardBufferedImage = ImageIO.read(new File("CardImages/red_back.png"));
+					dealerCardBackBufferedImage = ImageIO.read(new File("CardImages/red_back.png"));
 				} catch (IOException ex) {
 					ex.printStackTrace();
 				}
 
+                Image dealerCardBackImage = dealerCardBackBufferedImage.getScaledInstance(100,150,100);
+                ImageIcon dealerCardBackIcon = new ImageIcon(dealerCardBackImage);
+                JLabel dealerCardBackDelt = new JLabel(dealerCardBackIcon);
+
+                Image dealerCard1Image = dealerCard1.getCardImage().getScaledInstance(100,150,100);
+                ImageIcon dealerCard1Icon = new ImageIcon(dealerCard1Image);
+                JLabel dealerCard1Delt = new JLabel(dealerCard1Icon);
+
+                Image dealerCard2Image = dealerCard2.getCardImage().getScaledInstance(100,150,100);
+                ImageIcon dealerCard2Icon = new ImageIcon(dealerCard2Image);
+                JLabel dealerCard2Delt = new JLabel(dealerCard2Icon);
+
 				Image user1CardBackImage = user1CardBackBufferedImage.getScaledInstance(100,150,100);
 				ImageIcon user1CardBackIcon = new ImageIcon(user1CardBackImage);
 				JLabel user1CardBackDelt = new JLabel(user1CardBackIcon);
-
-				Image dealerCardBackImage = dealerCardBufferedImage.getScaledInstance(100,150,100);
-				ImageIcon dealerCardBackIcon = new ImageIcon(dealerCardBackImage);
-				JLabel dealerCardBackDelt = new JLabel(dealerCardBackIcon);
 
 				Image user1Card1Image = user1Card1.getCardImage().getScaledInstance(100,150,100);
 				ImageIcon user1Card1Icon = new ImageIcon(user1Card1Image);
@@ -142,9 +153,15 @@ public class Landing {
 				centerSouthPanel.add(user1Card1Delt);
 				centerSouthPanel.add(user1Card2Delt);
 
+				centerNorthPanel.setOpaque(false);
+				centerSouthPanel.setLayout(new FlowLayout());
+				centerNorthPanel.add(dealerCardBackDelt);
+				centerNorthPanel.add(dealerCard1Delt);
+				centerNorthPanel.add(dealerCard2Delt);
+
 				centerPanel.setOpaque(false);
 				centerPanel.setLayout(new BorderLayout());
-				centerPanel.add(dealerCardBackDelt, BorderLayout.NORTH);
+				centerPanel.add(centerNorthPanel, BorderLayout.NORTH);
 				centerPanel.add(centerSouthPanel, BorderLayout.SOUTH);
 
 				eastPanel.setOpaque(false);
