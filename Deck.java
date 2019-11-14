@@ -1,8 +1,7 @@
 /**
  * This class represents a Deck of Card objects using an ArrayList and contains
  * methods to shuffle and deal the cards
- * 
- * @author Joshua Kleine
+ *
  * @version 1.0
  * 
  * CEN3031    Project

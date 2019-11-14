@@ -1,7 +1,6 @@
 /*
 This file stores User data to a file and provides methods to encrypt the password,
 as well as to validate login and change password "securely"
-@author Joshua Kleine
 @version 1.0
 CEN 3031
 File: User.java

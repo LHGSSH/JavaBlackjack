@@ -1,44 +1,51 @@
+import java.util.ArrayList;
+import java.util.ListIterator;
+
 public class Shoe
 {
-    private Deck deck01;
-    private Deck deck02;
-    private Deck deck03;
-    private Deck deck04;
-    private Deck deck05;
-    private Deck deck06;
-    private Deck deck07;
-    private Deck deck08;
     private Deck currentDeck;
-    private int decksRemaining;
+    private final int decksInAShoe = 8;
+    private ArrayList<Deck> shoeOfDecks;
+    private ListIterator<Deck> deckIterator;
 
+    //Makes an arraylist containing all the decks
+    //Uses an iterator to take out the latest deck, and assign it to currentDeck
     public Shoe()
     {
-        this.deck01 = new Deck();
-        this.deck02 = new Deck();
-        this.deck03 = new Deck();
-        this.deck04 = new Deck();
-        this.deck05 = new Deck();
-        this.deck06 = new Deck();
-        this.deck07 = new Deck();
-        this.deck08 = new Deck();
-
-        this.currentDeck = this.deck01;
-
-        this.decksRemaining = 8;
+        shoeOfDecks = new ArrayList<Deck>(decksInAShoe);
+        for (int i = 1; i <= decksInAShoe; i++){
+            shoeOfDecks.add(new Deck());
+        }
+        deckIterator = shoeOfDecks.listIterator();
+        currentDeck = deckIterator.next();
+        deckIterator.remove();
     }
 
     public boolean isShoeEmpty()
     {
-        if(decksRemaining >= 1)
+        if(deckIterator.hasNext())
             return false;
         else
             return true;
     }
-
-    public Card deal(Deck currentDeck)
-    {
-        // Presumed that dealCard method exists within Deck class
+//Returns a card from the deck, moves to next deck if deck is empty
+    public Card deal(){
+        if (currentDeck.getDeckSize() > 0)
+            return currentDeck.dealCard();
+        currentDeck = deckIterator.next();
+        deckIterator.remove();
         return currentDeck.dealCard();
     }
 
+   //Temporary testing methods
+    void printCard(Card c){
+        System.out.println(c.getRank() + " " + c. getSuit() +" " + c. getValue());
+    }
+    public static void main(String [] args){
+        Shoe s1 = new Shoe();
+        for (int i = 0; i < 20; i++){
+            Card c = s1.deal();
+            s1.printCard(c);
+        }
+    }
 }
