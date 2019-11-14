@@ -1,3 +1,13 @@
+/*
+This file creates a shoe containing decks of 52 cards.
+It has methods to deal until the shoe is empty.
+The higher order class will have to use isShoeEmpty()
+to create a new shoe when needed
+@version 1.0
+CEN 3031
+File: GameManager.java
+*/
+
 import java.util.ArrayList;
 import java.util.ListIterator;
 

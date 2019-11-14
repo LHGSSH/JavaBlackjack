@@ -6,7 +6,6 @@ import java.io.IOException;
 /**
  * This class represents a playing card.
  * 
- * @author Liam Hilton-Green
  * @version 1.0
  * 
  * CEN3031    Project

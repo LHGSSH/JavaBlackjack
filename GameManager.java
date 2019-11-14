@@ -3,7 +3,7 @@ This file stores User data to a file and provides methods to encrypt the passwor
 as well as to validate login and change password "securely"
 @version 1.0
 CEN 3031
-File: User.java
+File: GameManager.java
 */
 public class GameManager {
 

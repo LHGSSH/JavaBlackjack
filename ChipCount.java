@@ -1,7 +1,6 @@
 /*
 POJO to be used to display the chip count in game and to write to the score
 when user saves or exits
-@author Joshua Kleine
 @version 1.0
 CEN 3031
 File: ChipCount.java
