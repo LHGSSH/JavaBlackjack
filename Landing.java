@@ -93,13 +93,50 @@ public class Landing {
                 Card dealerCard2 = new Card(Suit.SPADES, 1);
 
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
+
 				betButton.setText("BET");
+				betButton.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent actionEvent) {
+						JFrame betFrame = new JFrame();
+						betFrame.setBounds(500, 475, 200, 100);
+						betFrame.setDefaultCloseOperation(betFrame.HIDE_ON_CLOSE);
+						JTextArea betButtonText = new JTextArea();
+						betButtonText.setText("Bet Button Pressed!");
+						betFrame.add(betButtonText);
+						betFrame.setVisible(true);
+					}
+				});
 				hitButton.setText("HIT");
+				hitButton.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent actionEvent) {
+						JFrame hitFrame = new JFrame();
+						hitFrame.setBounds(500, 475, 200, 100);
+						hitFrame.setDefaultCloseOperation(hitFrame.HIDE_ON_CLOSE);
+						JTextArea hitButtonText = new JTextArea();
+						hitButtonText.setText("Hit Button Pressed!");
+						hitFrame.add(hitButtonText);
+						hitFrame.setVisible(true);
+					}
+				});
 				stayButton.setText("STAY");
+				stayButton.addActionListener(new ActionListener() {
+					@Override
+					public void actionPerformed(ActionEvent actionEvent) {
+						JFrame stayFrame = new JFrame();
+						stayFrame.setBounds(500, 475, 200, 100);
+						stayFrame.setDefaultCloseOperation(stayFrame.HIDE_ON_CLOSE);
+						JTextArea stayButtonText = new JTextArea();
+						stayButtonText.setText("Stay Button Pressed!");
+						stayFrame.add(stayButtonText);
+						stayFrame.setVisible(true);
+					}
+				});
 
 				/*TODO:: Call the Game_Manager class here.
 				   Get card images from a Deck that gets made in Game_Manager.
-				   Add 'Bet' and 'Hit' and 'Stand' buttons
+				   Add 'Bet' and 'Hit' and 'Stand' button functionality
 				 */
 
 				try {
