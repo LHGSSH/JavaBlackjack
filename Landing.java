@@ -71,46 +71,36 @@ public class Landing {
 			public void actionPerformed(ActionEvent e)
 			{
 				JFrame popup = new JFrame();
-				popup.setBounds(100, 100, 950, 750);
-				popup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				popup.getContentPane().setLayout(new BorderLayout(0, 0));
+                JPanel northPanel = new JPanel();
+                JPanel centerSouthPanel = new JPanel();
+                JPanel centerNorthPanel = new JPanel();
+                JPanel centerPanel = new JPanel();
+                JPanel eastPanel = new JPanel();
+                JPanel westPanel = new JPanel();
+                JPanel backgroundPanel = new JPanel();
+                JLabel backgroundImage = new JLabel();
+                JTextArea txtrCommence = new JTextArea();
+                JButton betButton = new JButton();
+                JButton hitButton = new JButton();
+                JButton stayButton = new JButton();
 
-				JTextArea txtrCommence = new JTextArea();
+                BufferedImage user1CardBackBufferedImage = null;
+                BufferedImage dealerCardBackBufferedImage = null;
+
+                Card user1Card1 = new Card(Suit.HEARTS, 8);
+                Card user1Card2 = new Card(Suit.CLUBS, 5);
+                Card dealerCard1 = new Card(Suit.DIAMONDS, 11);
+                Card dealerCard2 = new Card(Suit.SPADES, 1);
+
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
-
-				JPanel backgroundPanel = new JPanel();
-				backgroundPanel.setOpaque(false);
-				backgroundPanel.setLayout(new BorderLayout());
-
-				JLabel backgroundImage = new JLabel();
-				backgroundImage.setIcon(new ImageIcon("CardImages/Green_Background.png"));
-				backgroundImage.setLayout(new BorderLayout());
-
-				JButton betButton = new JButton();
 				betButton.setText("BET");
-				JButton hitButton = new JButton();
 				hitButton.setText("HIT");
-				JButton stayButton = new JButton();
 				stayButton.setText("STAY");
 
 				/*TODO:: Call the Game_Manager class here.
 				   Get card images from a Deck that gets made in Game_Manager.
 				   Add 'Bet' and 'Hit' and 'Stand' buttons
 				 */
-
-				BufferedImage user1CardBackBufferedImage = null;
-				BufferedImage dealerCardBackBufferedImage = null;
-				Card user1Card1 = new Card(Suit.HEARTS, 8);
-				Card user1Card2 = new Card(Suit.CLUBS, 5);
-				Card dealerCard1 = new Card(Suit.DIAMONDS, 11);
-				Card dealerCard2 = new Card(Suit.SPADES, 1);
-
-				JPanel northPanel = new JPanel();
-				JPanel centerSouthPanel = new JPanel();
-				JPanel centerNorthPanel = new JPanel();
-				JPanel centerPanel = new JPanel();
-				JPanel eastPanel = new JPanel();
-				JPanel westPanel = new JPanel();
 
 				try {
 					user1CardBackBufferedImage = ImageIO.read(new File("CardImages/blue_back.png"));
@@ -173,13 +163,20 @@ public class Landing {
 				westPanel.add(betButton);
 				westPanel.add(stayButton);
 
+                backgroundPanel.setOpaque(false);
+                backgroundPanel.setLayout(new BorderLayout());
 				backgroundPanel.add(centerPanel, BorderLayout.CENTER);
 				backgroundPanel.add(northPanel, BorderLayout.NORTH);
 				backgroundPanel.add(eastPanel, BorderLayout.EAST);
 				backgroundPanel.add(westPanel, BorderLayout.WEST);
 
+                backgroundImage.setIcon(new ImageIcon("CardImages/Green_Background.png"));
+                backgroundImage.setLayout(new BorderLayout());
 				backgroundImage.add(backgroundPanel);
 
+                popup.setBounds(100, 100, 950, 750);
+                popup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                popup.getContentPane().setLayout(new BorderLayout(0, 0));
 				popup.add(backgroundImage);
 				popup.setVisible(true);
 
