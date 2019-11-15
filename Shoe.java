@@ -1,3 +1,13 @@
+/*
+This file creates a shoe containing decks of 52 cards.
+It has methods to deal until the shoe is empty.
+The higher order class will have to use isShoeEmpty()
+to create a new shoe when needed
+@version 1.0
+CEN 3031
+File: GameManager.java
+*/
+
 import java.util.ArrayList;
 import java.util.ListIterator;
 
@@ -23,15 +33,18 @@ public class Shoe
 
     public boolean isShoeEmpty()
     {
-        if(deckIterator.hasNext())
+        if(deckIterator.hasNext()) {
             return false;
-        else
+        }
+        else {
             return true;
+        }
     }
 //Returns a card from the deck, moves to next deck if deck is empty
     public Card deal(){
-        if (currentDeck.getDeckSize() > 0)
+        if (currentDeck.getDeckSize() > 0) {
             return currentDeck.dealCard();
+        }
         currentDeck = deckIterator.next();
         deckIterator.remove();
         return currentDeck.dealCard();
@@ -39,7 +52,7 @@ public class Shoe
 
    //Temporary testing methods
     void printCard(Card c){
-        System.out.println(c.getRank() + " " + c. getSuit() +" " + c. getValue());
+        System.out.println(c.getRank() + " " + c.getSuit() +" " + c.getValue());
     }
     public static void main(String [] args){
         Shoe s1 = new Shoe();

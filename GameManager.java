@@ -1,9 +1,8 @@
 /*
-This file stores User data to a file and provides methods to encrypt the password,
-as well as to validate login and change password "securely"
+This class provides the logic for the Blackjack game.
 @version 1.0
 CEN 3031
-File: User.java
+File: GameManager.java
 */
 public class GameManager {
 
