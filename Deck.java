@@ -15,8 +15,9 @@ public class Deck {
 
     private int nextCard;
     private int deckSize;
-    private ArrayList<Card> deckOfCards = new ArrayList<Card>(52);
+    ArrayList<Card> deckOfCards = new ArrayList<Card>(52);
 
+        public Deck(int nothing){}
     //Two loops to create all 52 cards. The inner loop is complicated, but allows for this
     //code to hold even for changes in the size of a deck or types of suits.
     public Deck(){

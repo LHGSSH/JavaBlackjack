@@ -16,7 +16,8 @@ public class User{
 
     private String fileName = "userData.txt";
     private int score;
-
+    private String username, password;
+    public User(){}
     /* 
     Creates the file if none exists, and writes the username and password.
     Each is followed by a newline
@@ -96,7 +97,7 @@ public class User{
         return false;
     }
 
-    public void addScore(String username, String password){
+    public void addScore(String username, String password, int scoreEarned){
          
     }
 
