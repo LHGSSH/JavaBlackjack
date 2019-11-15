@@ -8,6 +8,7 @@ File: User.java
 public class GameManager {
 
     Shoe s1;
+    ChipCount chips;
     //TODO: handle if the shoe is empty before dealing by creating a new shoe
     public GameManager(User u1){
         s1 = new Shoe();
@@ -25,6 +26,9 @@ public class GameManager {
 
     public void stay(){
         //TODO needs logic, this is just so it will compile
+    }
+
+    public void endGame(){
     }
 
 }

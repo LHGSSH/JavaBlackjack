@@ -16,6 +16,7 @@ public class User{
 
     private String fileName = "userData.txt";
     private int score;
+    private String username, password;
 
     /* 
     Creates the file if none exists, and writes the username and password.
