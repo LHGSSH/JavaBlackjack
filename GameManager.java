@@ -30,17 +30,19 @@ public class GameManager {
     }
 
     //Returns the next card, moves to next deck otherwise
+    
     public void hit(){
         if (s1.isShoeEmpty()){
             s1 = new Shoe();
         }
         hand.deckOfCards.add(s1.deal());
     }
+    
     public boolean bet(int betAmount){
         //TODO needs logic, this is just so it will compile
         return true;
     }
-
+    
     public void stay(){
         //TODO needs logic, this is just so it will compile
     }
