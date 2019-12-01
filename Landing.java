@@ -95,6 +95,7 @@ public class Landing {
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
 
 				betButton.setText("BET");
+				//TODO: Call Bet.main() inside this listener
 				betButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent actionEvent) {
@@ -108,6 +109,7 @@ public class Landing {
 					}
 				});
 				hitButton.setText("HIT");
+				//TODO: Call Hit.main() inside this listener
 				hitButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent actionEvent) {
@@ -121,6 +123,7 @@ public class Landing {
 					}
 				});
 				stayButton.setText("STAY");
+				//TODO: Call Stay.main() inside this listener
 				stayButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent actionEvent) {
