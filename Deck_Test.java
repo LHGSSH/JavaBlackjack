@@ -7,15 +7,6 @@ class Deck_Test
     private Deck testDeck = new Deck();
 
     @Test
-    void Shuffle()
-    {
-        Card testCard1 = testDeck.dealCard();
-        testDeck.Shuffle();
-        Card testCard2 = testDeck.dealCard();
-
-        assertNotEquals(testCard1.getRank(), testCard2.getRank());
-    }
-    @Test
     void dealCard()
     {
         int deckSizeBefore = testDeck.getDeckSize();
@@ -26,5 +17,10 @@ class Deck_Test
 
         assertNotEquals(deckSizeBefore, deckSizeAfter);
         assertNotEquals(dealCardTestCard, null);
+
+        Card testCard1 = testDeck.dealCard();
+        Card testCard2 = testDeck.dealCard();
+
+        assertNotEquals(testCard1.getRank(), testCard2.getRank());
     }
 }
