@@ -13,8 +13,8 @@ import java.util.ListIterator;
 
 public class Deck {
 
-    private int nextCard;
-    private int deckSize;
+    // private int nextCard; Not necessary due to use of array list
+    // private int deckSize; Not necessary due to use of array list
     ArrayList<Card> deckOfCards = new ArrayList<Card>(52);
 
         public Deck(int nothing){}
@@ -27,13 +27,9 @@ public class Deck {
                 deckOfCards.add(card);
             }
       }
+      Collections.shuffle(deckOfCards);
     }
-    /*
-     This method mixes the ArrayList of Cards. It was modified to not return the deck.
-     */
-    public void Shuffle(){
-        Collections.shuffle(deckOfCards);
-    }
+   
     /*
     If there is another card in the deck, this method returns it.
     Else, it returns null.

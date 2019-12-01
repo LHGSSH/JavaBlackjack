@@ -86,7 +86,8 @@ public class Landing {
 
                 BufferedImage user1CardBackBufferedImage = null;
                 BufferedImage dealerCardBackBufferedImage = null;
-
+                
+                //TODO: Remove this? Need to randomize first cards dealt
                 Card user1Card1 = new Card(Suit.HEARTS, 8);
                 Card user1Card2 = new Card(Suit.CLUBS, 5);
                 Card dealerCard1 = new Card(Suit.DIAMONDS, 11);
@@ -95,7 +96,7 @@ public class Landing {
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
 
 				betButton.setText("BET");
-				//TODO: Call Bet.main() inside this listener
+
 				betButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent actionEvent) {
@@ -109,7 +110,7 @@ public class Landing {
 					}
 				});
 				hitButton.setText("HIT");
-				//TODO: Call Hit.main() inside this listener
+
 				hitButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent actionEvent) {
