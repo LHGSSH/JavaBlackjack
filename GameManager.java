@@ -31,11 +31,12 @@ public class GameManager {
 
     //Returns the next card, moves to next deck otherwise
     
-    public void hit(){
+    public Card hit(){
         if (s1.isShoeEmpty()){
             s1 = new Shoe();
         }
         hand.deckOfCards.add(s1.deal());
+        return hand.dealCard();
     }
     
     public boolean bet(int betAmount){
