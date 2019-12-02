@@ -116,15 +116,18 @@ public class Landing {
 				hitButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent actionEvent) {
-						
-						
-						JFrame hitFrame = new JFrame();
-						hitFrame.setBounds(500, 475, 200, 100);
-						hitFrame.setDefaultCloseOperation(hitFrame.HIDE_ON_CLOSE);
-						JTextArea hitButtonText = new JTextArea();
-						hitButtonText.setText("Hit Button Pressed!");
-						hitFrame.add(hitButtonText);
-						hitFrame.setVisible(true);
+
+						newGame.hit();
+
+						Image user1Card2Image = newGame.userHand.deckOfCards.get(2).getCardImage().getScaledInstance(100,150,100);
+						//TODO: Add a scaling .get(n) to get next cards.
+						ImageIcon user1Card2Icon = new ImageIcon(user1Card2Image);
+						JLabel user1Card2Delt = new JLabel(user1Card2Icon);
+
+						centerSouthPanel.add(user1Card2Delt);
+
+						popup.revalidate();
+
 					}
 				});
 				stayButton.setText("STAY");
@@ -163,21 +166,8 @@ public class Landing {
 						centerNorthPanel.add(dealerCard2Delt);
 
 						popup.revalidate();
-
-						//JFrame stayFrame = new JFrame();
-						//stayFrame.setBounds(500, 475, 200, 100);
-						//stayFrame.setDefaultCloseOperation(stayFrame.HIDE_ON_CLOSE);
-						//JTextArea stayButtonText = new JTextArea();
-						//stayButtonText.setText("Stay Button Pressed!");
-						//stayFrame.add(stayButtonText);
-						//stayFrame.setVisible(true);
 					}
 				});
-
-				/*TODO:: Call the Game_Manager class here.
-				   Get card images from a Deck that gets made in Game_Manager.
-				   Add 'Bet' and 'Hit' and 'Stand' button functionality
-				 */
 
 				try {
 					user1CardBackBufferedImage = ImageIO.read(new File("CardImages/blue_back.png"));
