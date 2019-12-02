@@ -83,7 +83,6 @@ public class Landing {
                 JPanel backgroundPanel = new JPanel();
                 JLabel backgroundImage = new JLabel();
                 JTextArea userScore = new JTextArea();
-                JButton betButton = new JButton();
                 JButton hitButton = new JButton();
                 JButton stayButton = new JButton();
 
@@ -91,27 +90,7 @@ public class Landing {
 
                 BufferedImage user1CardBackBufferedImage = null;
                 BufferedImage dealerCardBackBufferedImage = null;
-                
-                //TODO: Remove this? Need to randomize first cards dealt
-                //Card user1Card1 = new Card(Suit.HEARTS, 8);
-                //Card user1Card2 = new Card(Suit.CLUBS, 5);
-                //Card dealerCard1 = new Card(Suit.DIAMONDS, 11);
-                //Card dealerCard2 = new Card(Suit.SPADES, 1);
 
-				betButton.setText("BET");
-
-				betButton.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent actionEvent) {
-						JFrame betFrame = new JFrame();
-						betFrame.setBounds(500, 475, 200, 100);
-						betFrame.setDefaultCloseOperation(betFrame.HIDE_ON_CLOSE);
-						JTextArea betButtonText = new JTextArea();
-						betButtonText.setText("Bet Button Pressed!");
-						betFrame.add(betButtonText);
-						betFrame.setVisible(true);
-					}
-				});
 				hitButton.setText("HIT");
 
 				hitButton.addActionListener(new ActionListener() {
@@ -236,7 +215,6 @@ public class Landing {
 				westPanel.setOpaque(false);
 				westPanel.setLayout(new GridLayout(5,0));
 				westPanel.add(hitButton);
-				westPanel.add(betButton);
 				westPanel.add(stayButton);
 
                 backgroundPanel.setOpaque(false);
