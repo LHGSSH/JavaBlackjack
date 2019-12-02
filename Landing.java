@@ -70,6 +70,8 @@ public class Landing {
 		btnLetsPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
+				GameManager newGame = new GameManager();
+
 				JFrame popup = new JFrame();
                 JPanel northPanel = new JPanel();
                 JPanel centerSouthPanel = new JPanel();
