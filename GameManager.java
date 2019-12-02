@@ -53,19 +53,19 @@ public class GameManager {
     public void startGame(){
         userHand.deckOfCards.add(s1.deal());
         userTotal = userHand.deckOfCards.get(0).getValue();
-        System.out.println("First User Card Value: " + userTotal);
+        //System.out.println("First User Card Value: " + userTotal);
 
         userHand.deckOfCards.add(s1.deal());
         userTotal += userHand.deckOfCards.get(1).getValue();
-        System.out.println("Second User Card Value: " + userTotal);
+        System.out.println("User Hand Value: " + userTotal);
 
         dealerHand.deckOfCards.add(s1.deal());
         dealerTotal = dealerHand.deckOfCards.get(0).getValue();
-        System.out.println("First Dealer Card Value: " + dealerTotal);
+        //System.out.println("First Dealer Card Value: " + dealerTotal);
 
         dealerHand.deckOfCards.add(s1.deal());
         dealerTotal += dealerHand.deckOfCards.get(1).getValue();
-        System.out.println("Second Dealer Card Value: " + dealerTotal);
+        System.out.println("Dealer Hand Value: " + dealerTotal);
     }
     public void updateHand(){
         //may interact with landing
