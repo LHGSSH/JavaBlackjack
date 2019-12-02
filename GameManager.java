@@ -28,11 +28,12 @@ public class GameManager {
 
     //Returns the next card, moves to next deck otherwise
     
-    public void hit(){
+    public Card hit(){
         if (s1.isShoeEmpty()){
             s1 = new Shoe();
         }
         userHand.deckOfCards.add(s1.deal());
+        return userHand.dealCard();
     }
     
     public boolean bet(int betAmount){
@@ -42,6 +43,7 @@ public class GameManager {
     
     public void stay(){
         //TODO needs logic, this is just so it will compile
+        dealerMove(dealerTotal);
     }
 
     public void endGame(ChipCount chips){
@@ -56,7 +58,6 @@ public class GameManager {
         userHand.deckOfCards.add(s1.deal());
         userTotal += userHand.deckOfCards.get(1).getValue();
         System.out.println("Second User Card Value: " + userTotal);
-        //test
 
         dealerHand.deckOfCards.add(s1.deal());
         dealerTotal = dealerHand.deckOfCards.get(0).getValue();
@@ -70,7 +71,7 @@ public class GameManager {
         //may interact with landing
     }
     public boolean isBust(int total){
-        if (total > 21){
+        if (userTotal > 21){
             return true;
         }
         return false;
@@ -80,10 +81,11 @@ public class GameManager {
         return false;
     }
     public void dealerMove(int currentScore){
-        if (currentScore >= 17)
-            //do not draw card\
-            ;
-        else //draw card
-        ;
+        Card dealtCard;
+        if (currentScore >= 17) {
+            dealtCard = s1.deal();
+            dealerTotal += dealtCard.getValue();
+            dealerHand.deckOfCards.add(dealtCard);
+        }
     }
 }
