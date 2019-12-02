@@ -137,14 +137,31 @@ public class Landing {
 						ImageIcon dealerCard2Icon = new ImageIcon(dealerCard2Image);
 						JLabel dealerCard2Delt = new JLabel(dealerCard2Icon);
 
-						centerNorthPanel.removeAll();
-						centerNorthPanel.setOpaque(false);
-						centerSouthPanel.setLayout(new FlowLayout());
-						centerNorthPanel.add(dealerCardBackDelt);
-						centerNorthPanel.add(dealerCard1Delt);
-						centerNorthPanel.add(dealerCard2Delt);
+						if (newGame.dealerHand.deckOfCards.size() > 2){
+							Image dealerCard3Image = newGame.dealerHand.deckOfCards.get(2).getCardImage().getScaledInstance(100,150,100);
+							ImageIcon dealerCard3Icon = new ImageIcon(dealerCard3Image);
+							JLabel dealerCard3Delt = new JLabel(dealerCard3Icon);
 
-						popup.revalidate();
+							centerNorthPanel.removeAll();
+							centerNorthPanel.setOpaque(false);
+							centerSouthPanel.setLayout(new FlowLayout());
+							centerNorthPanel.add(dealerCardBackDelt);
+							centerNorthPanel.add(dealerCard1Delt);
+							centerNorthPanel.add(dealerCard2Delt);
+							centerNorthPanel.add(dealerCard3Delt);
+
+							popup.revalidate();
+						}
+						else {
+							centerNorthPanel.removeAll();
+							centerNorthPanel.setOpaque(false);
+							centerSouthPanel.setLayout(new FlowLayout());
+							centerNorthPanel.add(dealerCardBackDelt);
+							centerNorthPanel.add(dealerCard1Delt);
+							centerNorthPanel.add(dealerCard2Delt);
+
+							popup.revalidate();
+						}
 					}
 				});
 
