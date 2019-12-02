@@ -134,7 +134,36 @@ public class Landing {
 					public void actionPerformed(ActionEvent actionEvent) {
 						
 						Stay.main(null);
-						
+
+						BufferedImage dealerCardBackBufferedImageStay = null;
+
+						try {
+							dealerCardBackBufferedImageStay = ImageIO.read(new File("CardImages/red_back.png"));
+						} catch (IOException ex) {
+							ex.printStackTrace();
+						}
+
+						Image dealerCardBackImage = dealerCardBackBufferedImageStay.getScaledInstance(100,150,100);
+						ImageIcon dealerCardBackIcon = new ImageIcon(dealerCardBackImage);
+						JLabel dealerCardBackDelt = new JLabel(dealerCardBackIcon);
+
+						Image dealerCard1Image = newGame.dealerHand.deckOfCards.get(0).getCardImage().getScaledInstance(100,150,100);
+						ImageIcon dealerCard1Icon = new ImageIcon(dealerCard1Image);
+						JLabel dealerCard1Delt = new JLabel(dealerCard1Icon);
+
+						Image dealerCard2Image = newGame.dealerHand.deckOfCards.get(1).getCardImage().getScaledInstance(100,150,100);
+						ImageIcon dealerCard2Icon = new ImageIcon(dealerCard2Image);
+						JLabel dealerCard2Delt = new JLabel(dealerCard2Icon);
+
+						centerNorthPanel.removeAll();
+						centerNorthPanel.setOpaque(false);
+						centerSouthPanel.setLayout(new FlowLayout());
+						centerNorthPanel.add(dealerCardBackDelt);
+						centerNorthPanel.add(dealerCard1Delt);
+						centerNorthPanel.add(dealerCard2Delt);
+
+						popup.revalidate();
+
 						//JFrame stayFrame = new JFrame();
 						//stayFrame.setBounds(500, 475, 200, 100);
 						//stayFrame.setDefaultCloseOperation(stayFrame.HIDE_ON_CLOSE);
@@ -165,7 +194,7 @@ public class Landing {
                 ImageIcon dealerCard1Icon = new ImageIcon(dealerCard1Image);
                 JLabel dealerCard1Delt = new JLabel(dealerCard1Icon);
 
-                Image dealerCard2Image = newGame.dealerHand.deckOfCards.get(1).getCardImage().getScaledInstance(100,150,100);
+                Image dealerCard2Image = dealerCardBackBufferedImage.getScaledInstance(100,150,100);
                 ImageIcon dealerCard2Icon = new ImageIcon(dealerCard2Image);
                 JLabel dealerCard2Delt = new JLabel(dealerCard2Icon);
 
