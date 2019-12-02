@@ -81,7 +81,7 @@ public class Landing {
                 JPanel westPanel = new JPanel();
                 JPanel backgroundPanel = new JPanel();
                 JLabel backgroundImage = new JLabel();
-                JTextArea txtrCommence = new JTextArea();
+                JTextArea userScore = new JTextArea();
                 JButton betButton = new JButton();
                 JButton hitButton = new JButton();
                 JButton stayButton = new JButton();
@@ -94,8 +94,6 @@ public class Landing {
                 //Card user1Card2 = new Card(Suit.CLUBS, 5);
                 //Card dealerCard1 = new Card(Suit.DIAMONDS, 11);
                 //Card dealerCard2 = new Card(Suit.SPADES, 1);
-
-				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
 
 				betButton.setText("BET");
 
@@ -127,7 +125,6 @@ public class Landing {
 						centerSouthPanel.add(user1Card2Delt);
 
 						popup.revalidate();
-
 					}
 				});
 				stayButton.setText("STAY");
@@ -200,9 +197,11 @@ public class Landing {
 				ImageIcon user1Card2Icon = new ImageIcon(user1Card2Image);
 				JLabel user1Card2Delt = new JLabel(user1Card2Icon);
 
+				userScore.setText("Current Score: " + newGame.startingChips);
+
 				northPanel.setOpaque(false);
 				northPanel.setLayout(new FlowLayout());
-				northPanel.add(txtrCommence);
+				northPanel.add(userScore);
 
 				centerSouthPanel.setOpaque(false);
 				centerSouthPanel.setLayout(new FlowLayout());
