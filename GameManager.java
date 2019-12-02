@@ -29,10 +29,23 @@ public class GameManager {
     //Returns the next card, moves to next deck otherwise
     
     public void hit(){
+        Card dealtCard;
+
         if (s1.isShoeEmpty()){
             s1 = new Shoe();
         }
-        userHand.deckOfCards.add(s1.deal());
+
+        dealtCard = s1.deal();
+
+        if (dealtCard.getRank() == 1) { //If the card is an ace
+            if ( (userTotal + 11) < 21) { //If having the ace as an 11 doesn't push the user over 21
+                dealtCard.setValue(11);
+            }
+            //Else, ace card already has a value of 1, so we keep it that way
+        }
+
+        userHand.deckOfCards.add(dealtCard);
+        userTotal += dealtCard.getValue();
     }
     
     public boolean bet(int betAmount){
