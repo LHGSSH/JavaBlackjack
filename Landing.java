@@ -160,7 +160,7 @@ public class Landing {
                 ImageIcon dealerCard1Icon = new ImageIcon(dealerCard1Image);
                 JLabel dealerCard1Delt = new JLabel(dealerCard1Icon);
 
-                Image dealerCard2Image = dealerCard2.getCardImage().getScaledInstance(100,150,100);
+                Image dealerCard2Image = newGame.dealerHand.deckOfCards.get(1).getCardImage().getScaledInstance(100,150,100);
                 ImageIcon dealerCard2Icon = new ImageIcon(dealerCard2Image);
                 JLabel dealerCard2Delt = new JLabel(dealerCard2Icon);
 
@@ -168,11 +168,11 @@ public class Landing {
 				ImageIcon user1CardBackIcon = new ImageIcon(user1CardBackImage);
 				JLabel user1CardBackDelt = new JLabel(user1CardBackIcon);
 
-				Image user1Card1Image = user1Card1.getCardImage().getScaledInstance(100,150,100);
+				Image user1Card1Image = newGame.userHand.deckOfCards.get(0).getCardImage().getScaledInstance(100,150,100);
 				ImageIcon user1Card1Icon = new ImageIcon(user1Card1Image);
 				JLabel user1Card1Delt = new JLabel(user1Card1Icon);
 
-				Image user1Card2Image = user1Card2.getCardImage().getScaledInstance(100,150,100);
+				Image user1Card2Image = newGame.userHand.deckOfCards.get(1).getCardImage().getScaledInstance(100,150,100);
 				ImageIcon user1Card2Icon = new ImageIcon(user1Card2Image);
 				JLabel user1Card2Delt = new JLabel(user1Card2Icon);
 
