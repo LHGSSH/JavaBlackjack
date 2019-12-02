@@ -156,7 +156,7 @@ public class Landing {
                 ImageIcon dealerCardBackIcon = new ImageIcon(dealerCardBackImage);
                 JLabel dealerCardBackDelt = new JLabel(dealerCardBackIcon);
 
-                Image dealerCard1Image = dealerCard1.getCardImage().getScaledInstance(100,150,100);
+                Image dealerCard1Image = newGame.dealerHand.deckOfCards.get(0).getCardImage().getScaledInstance(100,150,100);
                 ImageIcon dealerCard1Icon = new ImageIcon(dealerCard1Image);
                 JLabel dealerCard1Delt = new JLabel(dealerCard1Icon);
 
