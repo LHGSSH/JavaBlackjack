@@ -56,6 +56,7 @@ public class GameManager {
         userHand.deckOfCards.add(s1.deal());
         userTotal += userHand.deckOfCards.get(1).getValue();
         System.out.println("Second User Card Value: " + userTotal);
+        //test
 
         dealerHand.deckOfCards.add(s1.deal());
         dealerTotal = dealerHand.deckOfCards.get(0).getValue();
