@@ -74,6 +74,7 @@ public class Landing {
 
 				JFrame popup = new JFrame();
                 JPanel northPanel = new JPanel();
+                JPanel northRightPanel = new JPanel();
                 JPanel centerSouthPanel = new JPanel();
                 JPanel centerNorthPanel = new JPanel();
                 JPanel centerPanel = new JPanel();
@@ -85,6 +86,8 @@ public class Landing {
                 JButton betButton = new JButton();
                 JButton hitButton = new JButton();
                 JButton stayButton = new JButton();
+
+                Font scoreFont = new Font("Times New Roman", Font.BOLD, 16);
 
                 BufferedImage user1CardBackBufferedImage = null;
                 BufferedImage dealerCardBackBufferedImage = null;
@@ -198,10 +201,17 @@ public class Landing {
 				JLabel user1Card2Delt = new JLabel(user1Card2Icon);
 
 				userScore.setText("Current Score: " + newGame.startingChips);
+				userScore.setFont(scoreFont);
+				userScore.setBackground(Color.CYAN);
+				userScore.setEditable(false);
+
+				northRightPanel.setOpaque(false);
+				northRightPanel.setLayout(new BorderLayout());
+				northRightPanel.add(userScore);
 
 				northPanel.setOpaque(false);
-				northPanel.setLayout(new FlowLayout());
-				northPanel.add(userScore);
+				northPanel.setLayout(new BorderLayout());
+				northPanel.add(northRightPanel, BorderLayout.EAST);
 
 				centerSouthPanel.setOpaque(false);
 				centerSouthPanel.setLayout(new FlowLayout());
