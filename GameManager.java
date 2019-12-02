@@ -6,13 +6,13 @@ File: GameManager.java
 */
 public class GameManager {
 
-    Shoe s1;
+    static Shoe s1;
     ChipCount chips;
-    int dealerTotal, userTotal;
+    static int dealerTotal, userTotal;
     //The score a new User gets
     int startingChips = 100;
-    Deck userHand;
-    Deck dealerHand;
+    static Deck userHand;
+    static Deck dealerHand;
     //TODO: handle if the shoe is empty before dealing by creating a new shoe
     //New game manager is created every time the entire game restarts, not between hands
     //Landing must allow user to log in (can just let them put in username and password
@@ -80,12 +80,30 @@ public class GameManager {
 
         return false;
     }
-    public void dealerMove(int currentScore){
+    public static void dealerMove(int currentScore){
         Card dealtCard;
-        if (currentScore >= 17) {
+        while (currentScore < 17) 
+        {
             dealtCard = s1.deal();
             dealerTotal += dealtCard.getValue();
             dealerHand.deckOfCards.add(dealtCard);
+            currentScore = dealerTotal;
+            
+            System.out.println("Dealer Total: " + currentScore);
         }
+        
+        System.out.println("Final Dealer Total: " + dealerTotal);
+        
+        if (dealerTotal > 21)
+        	System.out.println("Dealer BUSTS!");
+        else if ((dealerTotal <= 21) && (dealerTotal > userTotal))
+        	System.out.println("Dealer WINS");
+        else
+        	System.out.println("Player WINS");
+    }
+    
+    public static int getDealerHandValue()
+    {
+    	return dealerTotal;
     }
 }

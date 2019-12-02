@@ -90,10 +90,10 @@ public class Landing {
                 BufferedImage dealerCardBackBufferedImage = null;
                 
                 //TODO: Remove this? Need to randomize first cards dealt
-                Card user1Card1 = new Card(Suit.HEARTS, 8);
-                Card user1Card2 = new Card(Suit.CLUBS, 5);
-                Card dealerCard1 = new Card(Suit.DIAMONDS, 11);
-                Card dealerCard2 = new Card(Suit.SPADES, 1);
+                //Card user1Card1 = new Card(Suit.HEARTS, 8);
+                //Card user1Card2 = new Card(Suit.CLUBS, 5);
+                //Card dealerCard1 = new Card(Suit.DIAMONDS, 11);
+                //Card dealerCard2 = new Card(Suit.SPADES, 1);
 
 				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
 
@@ -116,6 +116,8 @@ public class Landing {
 				hitButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent actionEvent) {
+						
+						
 						JFrame hitFrame = new JFrame();
 						hitFrame.setBounds(500, 475, 200, 100);
 						hitFrame.setDefaultCloseOperation(hitFrame.HIDE_ON_CLOSE);
@@ -130,13 +132,16 @@ public class Landing {
 				stayButton.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent actionEvent) {
-						JFrame stayFrame = new JFrame();
-						stayFrame.setBounds(500, 475, 200, 100);
-						stayFrame.setDefaultCloseOperation(stayFrame.HIDE_ON_CLOSE);
-						JTextArea stayButtonText = new JTextArea();
-						stayButtonText.setText("Stay Button Pressed!");
-						stayFrame.add(stayButtonText);
-						stayFrame.setVisible(true);
+						
+						Stay.main(null);
+						
+						//JFrame stayFrame = new JFrame();
+						//stayFrame.setBounds(500, 475, 200, 100);
+						//stayFrame.setDefaultCloseOperation(stayFrame.HIDE_ON_CLOSE);
+						//JTextArea stayButtonText = new JTextArea();
+						//stayButtonText.setText("Stay Button Pressed!");
+						//stayFrame.add(stayButtonText);
+						//stayFrame.setVisible(true);
 					}
 				});
 
