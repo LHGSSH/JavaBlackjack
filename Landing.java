@@ -49,23 +49,12 @@ public class Landing {
 		JLabel lblWelcomeToBlackjack = new JLabel("Welcome to Blackjack!");
 		lblWelcomeToBlackjack.setHorizontalAlignment(SwingConstants.CENTER);
 		mainFrame.getContentPane().add(lblWelcomeToBlackjack, BorderLayout.NORTH);
-		
+
+		User returningUser = new User();
+		//newUser not initialized because the constructor needs to be presented with the username and password
+		User newUser;
+
 		JButton btnLetsPlay = new JButton("Let's Play!");
-		btnLetsPlay.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) 
-			{
-				JFrame popup = new JFrame();
-				popup.setBounds(50, 50, 100, 100);
-				popup.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				popup.getContentPane().setLayout(new BorderLayout(0, 0));
-
-				JTextArea txtrCommence = new JTextArea();
-				txtrCommence.setText("Chips are counted...\n Cards are shuffled... \n GOOD LUCK!");
-				popup.getContentPane().add(txtrCommence, BorderLayout.CENTER);
-
-			}
-		});
 
 		btnLetsPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
