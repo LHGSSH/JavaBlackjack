@@ -28,7 +28,7 @@ public class User{
     public User(String username, String password){
            // setPassword(password);
            // setUserName(Username);
-            try (FileWriter fileWrite = new FileWriter(f)){
+            try (FileWriter fileWrite = new FileWriter(f,true)){
                 fileWrite.write(username + "\n" + encrypt(password) + "\n" + initialScore +"\n");
                 fileWrite.close();
             } catch (IOException e) {
@@ -85,7 +85,7 @@ public class User{
         //Deleting file and creating new one from ArrayList
             f.delete();
             File file = new File(fileName);
-            try (FileWriter fileWrite = new FileWriter(file)){
+            try (FileWriter fileWrite = new FileWriter(file,true)){
                 for (int i = 0; i < userData.size(); i++){
                     fileWrite.write(userData.get(i) + "\n");
                 }
