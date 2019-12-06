@@ -2,10 +2,7 @@ import java.awt.*;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -42,7 +39,7 @@ public class Landing {
 	 */
 	private void initialize() {
 		mainFrame = new JFrame();
-		mainFrame.setBounds(100, 100, 450, 300);
+		mainFrame.setBounds(100, 100, 450, 150);
 		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mainFrame.getContentPane().setLayout(new BorderLayout(0, 0));
 		
@@ -53,7 +50,40 @@ public class Landing {
 		User returningUser = new User();
 		//newUser not initialized because the constructor needs to be presented with the username and password
 		User newUser;
+		//creating textfields to get username and password
+		String defaultUsernameText = "Username";
+		String defaultPasswordText = "Password";
+		//TODO: for simplicity's sake, these will have a known bug that you can't use "Username"
+		// as a username or "Password" as a password
+		JTextField usernameText = new JTextField(defaultUsernameText, 20);
+		JTextField passwordText = new JTextField(defaultPasswordText, 20);
+		usernameText.addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e) {
+				if (usernameText.getText().equalsIgnoreCase(defaultUsernameText))
+					usernameText.setText("");
+			}
+			public void focusLost(FocusEvent e) {
+				if (usernameText.getText().equalsIgnoreCase(""))
+					usernameText.setText(defaultUsernameText);
+			}
+		});
+		passwordText.addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e) {
+				if (passwordText.getText().equalsIgnoreCase(defaultPasswordText))
+					passwordText.setText("");
+			}
+			public void focusLost(FocusEvent e) {
+				if (passwordText.getText().equalsIgnoreCase(""))
+					passwordText.setText(defaultPasswordText);
+			}
+		});
+		//Adding textfields to a panel to be in one section of the BorderLayout
+		JPanel logIn = new JPanel();
+		logIn.add(usernameText);
+		logIn.add(passwordText);
 
+
+		JLabel loginInfo = new JLabel("<html>Enter login info or<br>new login info<br>for a new user</html>");
 		JButton btnLetsPlay = new JButton("Let's Play!");
 
 		btnLetsPlay.addActionListener(new ActionListener() {
@@ -243,7 +273,10 @@ public class Landing {
 			}
 		});
 		mainFrame.getContentPane().add(btnLetsPlay, BorderLayout.SOUTH);
-		
+		mainFrame.getContentPane().add(loginInfo, BorderLayout.WEST);
+		mainFrame.getContentPane().add(logIn, BorderLayout.CENTER);
+
+
 	}
 
 }
