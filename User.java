@@ -15,25 +15,26 @@ import java.io.IOException;
 public class User{
 
     private String fileName = "userData.txt";
-    private int score;
+    private int initialScore = 100;
     private String username, password;
-    public User(){}
+
+    //Only make the file if none exists
+    File f = new File(fileName);
+    public User(){ }
     /* 
-    Creates the file if none exists, and writes the username and password.
+    Writes the username and password.
     Each is followed by a newline
     */
     public User(String username, String password){
-            File f = new File(fileName);
            // setPassword(password);
            // setUserName(Username);
             try (FileWriter fileWrite = new FileWriter(f)){
-                fileWrite.write(username + "\n" + encrypt(password) + "\n" + "0\n");
+                fileWrite.write(username + "\n" + encrypt(password) + "\n" + initialScore +"\n");
                 fileWrite.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }
     }
-       
     /* 
     Reads line by line, looking for a match in the username.
     If the line matches the username, and the next line (when decrypted) matches the password,
@@ -97,18 +98,54 @@ public class User{
         return false;
     }
 
+//Clones the file except with the new score
+// TODO: known bug if user makes their username the same as their password, and then earns the same value as a score.
+// it is extremely unlikely but would need to be dealt with
     public void addScore(String username, String password, int scoreEarned){
-         
+        File file = new File(fileName);
+        try{
+            File temp = File.createTempFile("file", ".txt", file.getParentFile());
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            FileWriter fileWrite = new FileWriter(temp);
+            for (String next = reader.readLine(); next != null; next = reader.readLine()){
+                fileWrite.write(next + "\n");
+                if (next.equals(username)){
+                    String tempPass = decrypt(reader.readLine());
+                    if (tempPass.equals(password)){       /* Changed to .equals() from == */
+                        fileWrite.write(tempPass + "\n");
+                        //To Skip old score
+                        reader.readLine();
+                        fileWrite.write(scoreEarned);
+                    }
+                }
+            }
+            file.delete();
+            temp.renameTo(file);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
     public boolean resetScore(String username, String password){
-
+        //Probably will not need this method, but it serves to remind of future functionality possibilities
         return true;
     }
-
+    //Returning -1 means the file was changed while the game was running and it must be reset
     public int retrieveScore(String username, String password){
-        
-        return 0;
+        try{
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            for (String next = reader.readLine(); next != null; next = reader.readLine()){
+                if (next.equals(username)){
+                    if (decrypt(reader.readLine()).equals(password)){       /* Changed to .equals() from == */
+                        return Integer.parseInt(reader.readLine());
+                    }
+                }
+            }
+            reader.close();
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+        return -1;
     }
 
     //Encrypts by casting to an int, adding to ascii value, and casting back to char

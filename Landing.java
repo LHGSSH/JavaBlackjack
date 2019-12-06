@@ -47,9 +47,8 @@ public class Landing {
 		lblWelcomeToBlackjack.setHorizontalAlignment(SwingConstants.CENTER);
 		mainFrame.getContentPane().add(lblWelcomeToBlackjack, BorderLayout.NORTH);
 
-		User returningUser = new User();
-		//newUser not initialized because the constructor needs to be presented with the username and password
-		User newUser;
+		User currentUser = new User();
+
 		//creating textfields to get username and password
 		String defaultUsernameText = "Username";
 		String defaultPasswordText = "Password";
@@ -89,6 +88,12 @@ public class Landing {
 		btnLetsPlay.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e)
 			{
+				String username = usernameText.getText();
+				String password = passwordText.getText();
+				//Add them to data file if they are not already in it
+				if(!currentUser.loginCheck(username, password)){
+					User currentUser = new User(username,password);
+			}
 				GameManager newGame = new GameManager();
 
 				JFrame popup = new JFrame();
